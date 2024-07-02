@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      // 1. document.createElement=================================================================
+      var newDiv = document.createElement("div");
+
+      // Set some properties for the new div
+      newDiv.id = "newDiv";
+      newDiv.className = "new-div-class";
+      newDiv.textContent = "Hello, I'm a new div!";
+
+      // Append the new div to the existing container div
+      var container = document.getElementById("container");
+      container.appendChild(newDiv);
+    </script>
+  </body>
+</html>
