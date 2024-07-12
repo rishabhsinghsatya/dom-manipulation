@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .carousel {
+        position: relative;
+        max-width: 600px;
+        margin: auto;
+        overflow: hidden;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+      }
+
+      .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+
+      .carousel-item {
+        min-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .carousel img {
+        width: 100%;
+        display: block;
+      }
+
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+      <div class="carousel-inner">
+        <img
+          src="https://images.unsplash.com/photo-1719489099010-1158ad4ef585?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="carousel-item active"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1719702702556-43c793e2b625?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="carousel-item"
+        />
+        <img
+          src="https://plus.unsplash.com/premium_photo-1691960547773-2393c0559208?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="carousel-item"
+        />
+      </div>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    <script>
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        const slides = document.querySelectorAll(".carousel-item");
+        if (index >= slides.length) {
+          currentSlide = 0;
+        } else if (index < 0) {
+          currentSlide = slides.length - 1;
+        } else {
+          currentSlide = index;
+        }
+
+        const carouselInner = document.querySelector(".carousel-inner");
+        carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+
+      function nextSlide() {
+        showSlide(currentSlide + 1);
+      }
+
+      function prevSlide() {
+        showSlide(currentSlide - 1);
+      }
+    </script>
+  </body>
+</html>
