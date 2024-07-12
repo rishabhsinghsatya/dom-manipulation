@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cat Clicker</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: white;
+      }
+      body {
+        background-color: black;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        gap: 30px;
+      }
+      .top-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .cat-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      .top-container img {
+        height: 150px;
+        width: 150px;
+        border: 1px solid white;
+        border-radius: 10px;
+        box-shadow: rgba(255, 255, 0, 0.25) 0px 50px 100px -20px,
+          rgba(255, 255, 0, 0.3) 0px 30px 60px -30px,
+          rgba(255, 255, 0, 0.35) 0px -2px 6px 0px inset;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+      .top-container img:hover {
+        transform: scale(1.1);
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        background-color: black;
+        border: 2px dashed white;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .box img {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 10px;
+      }
+      .bottom-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top-container">
+        <div class="cat-container">
+          <h3>Momo</h3>
+          <img
+            src="https://images.pexels.com/photos/20782645/pexels-photo-20782645/free-photo-of-white-cat-with-a-collar-on-a-street.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Momo"
+            class="image"
+            id="firstImage"
+          />
+          <h3 id="firstCount">Count: 0</h3>
+        </div>
+        <div class="cat-container">
+          <h3>Suki</h3>
+          <img
+            src="https://images.pexels.com/photos/2173872/pexels-photo-2173872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Suki"
+            class="image"
+            id="secondImage"
+          />
+          <h3 id="secondCount">Count: 0</h3>
+        </div>
+        <div class="cat-container">
+          <h3>Luna</h3>
+          <img
+            src="https://images.pexels.com/photos/179237/pexels-photo-179237.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Luna"
+            class="image"
+            id="thirdImage"
+          />
+          <h3 id="thirdCount">Count: 0</h3>
+        </div>
+        <div class="cat-container">
+          <h3>Shadow</h3>
+          <img
+            src="https://images.pexels.com/photos/12692139/pexels-photo-12692139.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Shadow"
+            class="image"
+            id="fourthImage"
+          />
+          <h3 id="fourthCount">Count: 0</h3>
+        </div>
+        <div class="cat-container">
+          <h3>Simba</h3>
+          <img
+            src="https://images.pexels.com/photos/6441460/pexels-photo-6441460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Simba"
+            class="image"
+            id="fifthImage"
+          />
+          <h3 id="fifthCount">Count: 0</h3>
+        </div>
+      </div>
+      <div class="bottom-container">
+        <div class="box">
+          <h3 class="showImage">Select an image to view</h3>
+        </div>
+      </div>
+    </div>
+    <script>
+      const images = document.querySelectorAll(".image");
+      const counts = [
+        document.querySelector("#firstCount"),
+        document.querySelector("#secondCount"),
+        document.querySelector("#thirdCount"),
+        document.querySelector("#fourthCount"),
+        document.querySelector("#fifthCount"),
+      ];
+      const showImage = document.querySelector(".showImage");
+
+      images.forEach((img, index) => {
+        let count = 0;
+        img.addEventListener("click", () => {
+          count++;
+          counts[index].textContent = `Count: ${count}`;
+          showImage.innerHTML = `<img src="${img.src}" alt="${img.alt}" />`;
+        });
+      });
+    </script>
+  </body>
+</html>
