@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cat clicker</title>
+    <style>
+      body {
+        color: white;
+        background-color: black;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container img {
+        width: 350px;
+        height: 350px;
+        background-color: red;
+        cursor: pointer;
+        border: 1px dashed white;
+        border-radius: 15px;
+      }
+      .resetButton {
+        padding: 10px 20px;
+        background-color: white;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .resetButton:hover {
+        background-color: gray;
+      }
+      span {
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt="Cat Image"
+        class="image"
+        id="catImage"
+      />
+      <h2 id="clickCount">You Click Image <span>0</span> Times</h2>
+      <button class="resetButton" id="resetButton">Reset</button>
+    </div>
+    <script>
+      const catImage = document.getElementById("catImage");
+      const clickCount = document.getElementById("clickCount");
+      const resetButton = document.getElementById("resetButton");
+
+      let count = 0;
+      let shouldIncrement = true;
+
+      catImage.addEventListener("click", () => {
+        if (shouldIncrement) {
+          count++;
+          clickCount.innerHTML = `You Click Image <span>${count}</span> Times`;
+        }
+        shouldIncrement = true;
+      });
+
+      resetButton.addEventListener("click", () => {
+        count = 0;
+        clickCount.innerHTML = `You Click Image <span>${count}</span> Times`;
+        shouldIncrement = false;
+      });
+    </script>
+  </body>
+</html>
