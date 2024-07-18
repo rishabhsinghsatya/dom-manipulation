@@ -46,15 +46,149 @@
       </div>
 
       <!-- mobile view -->
-      <!-- <div class="mobile-view">
-        <div class="left-part">
+      <div class="mobile-view">
+        <div class="mobile-view-left">
           <img src="./images/mobile.jpg" alt="" />
         </div>
-        <div class="right-part">
+        <div class="mobile-view-right">
           <h1>Download your shows to watch offline</h1>
           <p>Save your favourites easily and always have something to watch.</p>
         </div>
-      </div> -->
+      </div>
+
+      <!-- devices view -->
+      <div class="devices-view">
+        <div class="devices-view-left">
+          <h1>Watch everywhere</h1>
+          <p>
+            Stream unlimited movies and TV shows on your phone, tablet, laptop,
+            and TV.
+          </p>
+        </div>
+        <div class="devices-view-right">
+          <img src="./images/devices.png" alt="" />
+        </div>
+      </div>
+
+      <!-- childrens view -->
+      <div class="children-view">
+        <div class="children-view-left">
+          <img src="./images/children.png" alt="" />
+        </div>
+        <div class="children-view-right">
+          <h1>Create profiles for kids</h1>
+          <p>
+            Send children on adventures with their favourite characters in a
+            space made just for them—free with your membership.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ view -->
+      <div class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq-item">
+          <div class="faq-question">What is Netflix?</div>
+          <div class="faq-answer">
+            Netflix is a streaming service that offers a wide variety of
+            award-winning TV shows, movies, anime, documentaries and more – on
+            thousands of internet-connected devices. <br />You can watch as much
+            as you want, whenever you want, without a single ad – all for one
+            low monthly price. There's always something new to discover, and new
+            TV shows and movies are added every week!
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much does Netflix cost?</div>
+          <div class="faq-answer">
+            Watch Netflix on your smartphone, tablet, Smart TV, laptop, or
+            streaming device, all for one fixed monthly fee. Plans range from
+            $8.99 to $17.99 a month. No extra costs, no contracts.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Where can I watch?</div>
+          <div class="faq-answer">
+            Watch anywhere, anytime, on an unlimited number of devices. Sign in
+            with your Netflix account to watch instantly on the web at
+            netflix.com from your personal computer or on any internet-connected
+            device that offers the Netflix app.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do I cancel?</div>
+          <div class="faq-answer">
+            Netflix is flexible. There are no pesky contracts and no
+            commitments. You can easily cancel your account online in two
+            clicks. There are no cancellation fees – start or stop your account
+            anytime.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What can I watch on Netflix?</div>
+          <div class="faq-answer">
+            Netflix has an extensive library of feature films, documentaries, TV
+            shows, anime, award-winning Netflix originals, and more. Watch as
+            much as you want, anytime you want.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is Netflix good for kids?</div>
+          <div class="faq-answer">
+            The Netflix Kids experience is included in your membership to give
+            parents control while kids enjoy family-friendly TV shows and movies
+            in their own space.
+          </div>
+          <div>
+            <p>
+              Ready to watch? Enter your email to create or restart your
+              membership.
+            </p>
+            <div class="home-mail-button">
+              <input type="text" placeholder="Email Address" />
+              <button>Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-top">Questions? Call 000-800-919-1694</div>
+        <div class="footer-links">
+          <a href="#">FAQ</a>
+          <a href="#">Help Centre</a>
+          <a href="#">Account</a>
+          <a href="#">Media Centre</a>
+          <a href="#">Investor Relations</a>
+          <a href="#">Jobs</a>
+          <a href="#">Ways to Watch</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy</a>
+          <a href="#">Cookie Preferences</a>
+          <a href="#">Corporate Information</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Speed Test</a>
+          <a href="#">Legal Notices</a>
+          <a href="#">Only on Netflix</a>
+        </div>
+        <div class="language-selector">
+          <span>&#127760; English &#9662;</span>
+        </div>
+        <div class="footer-bottom">Netflix India</div>
+      </div>
     </div>
+    <script>
+      document.querySelectorAll(".faq-question").forEach((item) => {
+        item.addEventListener("click", (event) => {
+          const answer = document.querySelector(".faq-answer");
+          if (answer.style.display === "block") {
+            answer.style.display = "none";
+          } else {
+            answer.style.display = "block";
+          }
+          item.classList.toggle("active");
+        });
+      });
+    </script>
   </body>
 </html>
